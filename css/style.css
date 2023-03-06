@@ -58,7 +58,9 @@ body{
 /* start header */
 header{
     background-color: #68837E;
-    position: relative;
+    /* position: fixed;
+    width:100%;
+    opacity:0.7; */
 }
 header .container{
     display: flex;
@@ -76,27 +78,28 @@ header a img{
     width: 55px;
     margin: 10px;
 }
-header nav{
+header {
     display: flex;
     justify-content:flex-end;
     align-items:center ;
     flex: 1;
-    padding-right: 75px;
+    /* padding-right: 75px; */
     position: relative;
-}
-header nav ul{
-    display:flex ;
+    text-align: left;
     
 }
-header nav ul li{
+header ul{
+    display:flex ;
+}
+header ul li{
     padding: 0 10px ;
     position: relative;
     font-weight: bold;
     padding: 10px 20px;
 }
 
-header nav ul li .header-link:before,
-header nav ul li .header-link:after{
+header ul li .header-link:before,
+header ul li .header-link:after{
     content:"";
     position: absolute;
     border-style: solid; 
@@ -104,80 +107,69 @@ header nav ul li .header-link:after{
     top:0; 
     transition:  0.2s;
 }
-header nav ul li .header-link:after{
+header ul li .header-link:after{
     border-width: 2px 0;
     height: 90%; 
     width: 98%;
     transform: scale3d(0,1,1);
     transform-origin: left;
 }
-header nav ul li .header-link:hover:after{
+header ul li .header-link:hover:after{
     transform: scale3d(1,1,1);
     transition-delay: .2s;
 }
-header nav .header-list li .header-link:before{
+header .header-list li .header-link:before{
     border-width: 0 2px;
     height: 100%; 
     width: 95%;
     transform: scale3d(1,0,1);
 }
-header nav .header-list li .header-link:hover:before{
+header .header-list li .header-link:hover:before{
     transform: scale3d(1,1,1);
 }
-
-header nav .links{
-    position: relative;
+header .toggle-menu{
+    background: none;
+    border: none;
+    width: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: none;
 }
-header nav .links:hover .icon span:nth-child(2){
-    width:100% 
+header .toggle-menu:focus{
+    outline: none;
 }
-header nav .links .icon{
-    width:30px;
-    display:flex ;
-    flex-wrap:wrap ;
-    justify-content: flex-end;
-     /* position: relative;  */
+header .toggle-menu span{
+    display: block;
+    height: 4px;
+    background-color:#222;
+    margin-bottom: 4px;
+    border-radius: 5px;
 }
-header nav .links .icon span{
-    background-color: #333;
-    margin-bottom: 5px;
-    height: 3px;
-}
-header nav .links .icon span:first-child{
-    width: 100%;
-}
-header nav .links .icon span:nth-child(2){
-    width:60%;
-    transition: 0.3s;
-}
-header nav .links .icon span:last-child{
-    width:100%
-}
-
-@media (min-width:768px) {
-    header nav .links .icon{
-        display: none;
-    }
-}
-
 @media (max-width:767px) {
-    header nav ul
-    {
+    header .header-list{
         display: none;
     }
-    header nav .links .icon:hover + ul{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        /* right: ; */
-        left:-100px;
-        width: calc(100% + 500px);
-        background-color: rgba(0,0,0,0.5);
+    header .toggle-menu{
+        display: block;
     }
-    header nav ul li a{
-        padding: 15px !important;
-    } 
+    header .header-list.open{
+        background-color: #444;
+        padding: 20px;
+        display: block;
+        position: absolute;
+        left:0;
+        right: 0;
+        top:70%;
+        width:100%;
+        margin: auto;
+    }
+    header .header-list.open li a{
+
+    }
+    header ul li .header-link:before,
+header ul li .header-link:after{
+    display: none;
+}
 }
 
 /* end header */
@@ -326,6 +318,19 @@ header nav .links .icon span:last-child{
     gap: 50px;
     margin-bottom: 30px;
 }
+@media (max-width:767px) {
+    .location .container .location-content .location-info{
+        flex-direction: column;
+    }
+    .location .container .location-content .location-info:nth-child(2),
+    .location .container .location-content .location-info:nth-child(4){
+        flex-direction: column-reverse;
+    }
+    .location .container .location-content .location-info img{
+        width: 80%;
+        margin: auto;
+    }
+}
 .location .container .location-content .location-info img{
     border: 10px solid #bcb6b6;
 }
@@ -345,6 +350,11 @@ header nav .links .icon span:last-child{
     align-items: center;
     gap:30px;
     margin-bottom: 50px;
+}
+@media (max-width:767px) {
+    .location .container .remians{
+        flex-direction: column;
+    }
 }
 .location .container .remians .remians-info{
     background-color: #f5f0e7;
