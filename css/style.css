@@ -612,6 +612,9 @@ input[type=text], select, textarea {
     /* position: relative; */
     text-align: center;
 }
+@media (max) {
+    
+}
 .footer-links .footer-list li a{
     display: block;
     line-height: 20px;
