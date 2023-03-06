@@ -89,9 +89,10 @@ header {
     
 }
 header ul{
-    display:flex ;
+    /* display:flex ; */
 }
 header ul li{
+    display: inline-block;
     padding: 0 10px ;
     position: relative;
     font-weight: bold;
@@ -134,7 +135,19 @@ header .toggle-menu{
     cursor: pointer;
     margin-top: 10px;
     display: none;
+    position: relative;
 }
+header .toggle-menu.menu-active:before{
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #111 transparent;
+    position: absolute;
+    bottom: -10px;
+    left: 5px;
+    opacity: 0.7;
+}
+
 header .toggle-menu:focus{
     outline: none;
 }
@@ -154,14 +167,20 @@ header .toggle-menu span{
     }
     header .header-list.open{
         background-color: #444;
-        padding: 20px;
+        padding: 10px;
         display: block;
         position: absolute;
         left:0;
         right: 0;
-        top:70%;
-        width:100%;
+        top:85%;
+        width: 90%;
         margin: auto;
+        text-align: center;
+        z-index: 1;
+    }
+    header .header-list.open li{
+        display: block;
+        margin-right: 10px;
     }
     header .header-list.open li a{
 
