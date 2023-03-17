@@ -58,9 +58,6 @@ body{
 /* start header */
 header{
     background-color: #68837E;
-    /* position: fixed;
-    width:100%;
-    opacity:0.7; */
 }
 header .container{
     display: flex;
@@ -182,9 +179,6 @@ header .toggle-menu span{
         display: block;
         margin-right: 10px;
     }
-    header .header-list.open li a{
-
-    }
     header ul li .header-link:before,
 header ul li .header-link:after{
     display: none;
@@ -192,15 +186,20 @@ header ul li .header-link:after{
 }
 
 /* end header */
+
 /* start landing */
 .landing{
     height: 490px;
     background: url(../images/eyeBackgroundObject.png) left top no-repeat,
     url(../images/eagleBackgroundObject.png) right bottom no-repeat,
-    /* url(../images/catBackgroundObject.png) left bottom no-repeat; */
     url(../images/birdmanObject.png) right top no-repeat;
     background-size: 400px 200px , 300px 150px, 200px 250px;
     overflow: auto;
+}
+@media (max-size:767px) {
+    .landing{
+        background-size: 150px 150px , 200px 150px, 150px 150px;
+    }    
 }
 .landing .landing-text{
     position: absolute;
@@ -321,6 +320,12 @@ header ul li .header-link:after{
     padding: 0px 10px 30px ;
     color: blue;
 }
+@media (max-width:767px) {
+    .locations .locations-content .card .info .more.sp{
+        margin-bottom: 50px;
+        margin-top: 0px;
+    }
+}
 /* end locations  */
 
 /* start location */
@@ -338,6 +343,11 @@ header ul li .header-link:after{
     margin-bottom: 30px;
 }
 @media (max-width:767px) {
+    .location .container h2{
+        text-align: center;
+        /* font-size: 20px; */
+        
+    }
     .location .container .location-content .location-info{
         flex-direction: column;
     }
@@ -651,3 +661,50 @@ input[type=text], select, textarea {
     font-size: 13px;
     text-transform: uppercase;
 }
+/* start legend */
+.legends .container h2{
+    color: #2F4858;
+    font-size: 34px;
+    padding: 20px 0px 50px;
+    text-align: center;
+}
+.legends .container hr{
+    width: 80%;
+   border-color:#777;
+    margin: auto;
+}
+.legends .container .legends-content .legend-item h3{
+    color: #2F4858;
+    font-size: 28px;
+    padding-top:20px ;
+    margin-bottom:20px ;
+}
+.legends .container .legends-content .legend-item .detials{
+    display: flex;
+
+    margin-bottom:20px ;
+    gap: 30px;
+}
+@media (max-width:991px) {
+    .legends .container .legends-content .legend-item .detials{
+            flex-wrap: wrap;
+            justify-content: center;
+    }
+    .legends .container .legends-content .legend-item h3{
+        font-size: 20px;
+        text-align: center;
+    }
+}
+.legends .container .legends-content .legend-item .detials img{
+    border: 10px solid #bcb6b6;
+}
+.legends .container .legends-content .legend-item .detials span{
+    display: block;
+    line-height: 2;
+    font-size: 18px;
+    color: #222;
+}
+.legends .container .legends-content .legend-item .detials span.sp{
+    line-height: 3;
+}
+/* end legend */
