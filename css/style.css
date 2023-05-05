@@ -4,7 +4,6 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     text-decoration: none;
-    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -336,7 +335,7 @@ header ul li .header-link:after{
 }
 .location .container .location-content .location-info{
     display: flex;
-    line-height: 3;
+    line-height: 1.8;
     font-size: 18px;
     color: #222;
     gap: 50px;
@@ -681,7 +680,6 @@ input[type=text], select, textarea {
 }
 .legends .container .legends-content .legend-item .detials{
     display: flex;
-
     margin-bottom:20px ;
     gap: 30px;
 }
@@ -695,12 +693,14 @@ input[type=text], select, textarea {
         text-align: center;
     }
 }
+.legends .container .legends-content .legend-item .detials li{
+    padding: 10px;
+}
 .legends .container .legends-content .legend-item .detials img{
     border: 10px solid #bcb6b6;
 }
 .legends .container .legends-content .legend-item .detials span{
     display: block;
-    line-height: 2;
     font-size: 18px;
     color: #222;
 }
